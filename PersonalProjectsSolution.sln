@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamManipulationProject", "StreamManipulationProject\StreamManipulationProject.csproj", "{75C88E33-6734-4901-B711-F8F6E91FD603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketManipulationSocket", "SocketManipulationSocket\SocketManipulationSocket.csproj", "{27DA0091-2E9C-4032-A922-B2B755B61A3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulationProject", "ImageManipulationProject\ImageManipulationProject.csproj", "{0A6EFD64-D25B-439B-9FA0-B956B9134398}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75C88E33-6734-4901-B711-F8F6E91FD603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C88E33-6734-4901-B711-F8F6E91FD603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C88E33-6734-4901-B711-F8F6E91FD603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C88E33-6734-4901-B711-F8F6E91FD603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27DA0091-2E9C-4032-A922-B2B755B61A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DA0091-2E9C-4032-A922-B2B755B61A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DA0091-2E9C-4032-A922-B2B755B61A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DA0091-2E9C-4032-A922-B2B755B61A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A6EFD64-D25B-439B-9FA0-B956B9134398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A6EFD64-D25B-439B-9FA0-B956B9134398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A6EFD64-D25B-439B-9FA0-B956B9134398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A6EFD64-D25B-439B-9FA0-B956B9134398}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
