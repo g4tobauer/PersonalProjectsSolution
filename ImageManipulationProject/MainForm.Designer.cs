@@ -36,13 +36,16 @@
             this.btn_Div = new System.Windows.Forms.Button();
             this.btn_Mult = new System.Windows.Forms.Button();
             this.chk_ResetColor = new System.Windows.Forms.CheckBox();
+            this.btn_ResetImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnl_Draw
             // 
-            this.pnl_Draw.Location = new System.Drawing.Point(12, 12);
+            this.pnl_Draw.AutoSize = true;
+            this.pnl_Draw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Draw.Location = new System.Drawing.Point(0, 0);
             this.pnl_Draw.Name = "pnl_Draw";
-            this.pnl_Draw.Size = new System.Drawing.Size(765, 498);
+            this.pnl_Draw.Size = new System.Drawing.Size(789, 599);
             this.pnl_Draw.TabIndex = 0;
             // 
             // btn_ProcuraImagem
@@ -57,7 +60,7 @@
             // 
             // btn_AddImage
             // 
-            this.btn_AddImage.Location = new System.Drawing.Point(12, 527);
+            this.btn_AddImage.Location = new System.Drawing.Point(10, 527);
             this.btn_AddImage.Name = "btn_AddImage";
             this.btn_AddImage.Size = new System.Drawing.Size(85, 23);
             this.btn_AddImage.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             // btn_SubImage
             // 
-            this.btn_SubImage.Location = new System.Drawing.Point(103, 527);
+            this.btn_SubImage.Location = new System.Drawing.Point(101, 527);
             this.btn_SubImage.Name = "btn_SubImage";
             this.btn_SubImage.Size = new System.Drawing.Size(85, 23);
             this.btn_SubImage.TabIndex = 3;
@@ -77,7 +80,7 @@
             // 
             // btn_SaveImage
             // 
-            this.btn_SaveImage.Location = new System.Drawing.Point(487, 527);
+            this.btn_SaveImage.Location = new System.Drawing.Point(192, 527);
             this.btn_SaveImage.Name = "btn_SaveImage";
             this.btn_SaveImage.Size = new System.Drawing.Size(85, 23);
             this.btn_SaveImage.TabIndex = 6;
@@ -87,7 +90,7 @@
             // 
             // btn_Div
             // 
-            this.btn_Div.Location = new System.Drawing.Point(285, 527);
+            this.btn_Div.Location = new System.Drawing.Point(101, 556);
             this.btn_Div.Name = "btn_Div";
             this.btn_Div.Size = new System.Drawing.Size(85, 23);
             this.btn_Div.TabIndex = 8;
@@ -97,7 +100,7 @@
             // 
             // btn_Mult
             // 
-            this.btn_Mult.Location = new System.Drawing.Point(194, 527);
+            this.btn_Mult.Location = new System.Drawing.Point(10, 556);
             this.btn_Mult.Name = "btn_Mult";
             this.btn_Mult.Size = new System.Drawing.Size(85, 23);
             this.btn_Mult.TabIndex = 7;
@@ -108,18 +111,29 @@
             // chk_ResetColor
             // 
             this.chk_ResetColor.AutoSize = true;
-            this.chk_ResetColor.Location = new System.Drawing.Point(387, 531);
+            this.chk_ResetColor.Location = new System.Drawing.Point(283, 527);
             this.chk_ResetColor.Name = "chk_ResetColor";
             this.chk_ResetColor.Size = new System.Drawing.Size(82, 17);
             this.chk_ResetColor.TabIndex = 9;
             this.chk_ResetColor.Text = "Resetar Cor";
             this.chk_ResetColor.UseVisualStyleBackColor = true;
             // 
+            // btn_ResetImage
+            // 
+            this.btn_ResetImage.Location = new System.Drawing.Point(192, 556);
+            this.btn_ResetImage.Name = "btn_ResetImage";
+            this.btn_ResetImage.Size = new System.Drawing.Size(85, 23);
+            this.btn_ResetImage.TabIndex = 10;
+            this.btn_ResetImage.Text = "RESET";
+            this.btn_ResetImage.UseVisualStyleBackColor = true;
+            this.btn_ResetImage.Click += new System.EventHandler(this.btn_ResetImage_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 562);
+            this.ClientSize = new System.Drawing.Size(789, 599);
+            this.Controls.Add(this.btn_ResetImage);
             this.Controls.Add(this.chk_ResetColor);
             this.Controls.Add(this.btn_Div);
             this.Controls.Add(this.btn_Mult);
@@ -145,5 +159,6 @@
         private System.Windows.Forms.Button btn_Div;
         private System.Windows.Forms.Button btn_Mult;
         private System.Windows.Forms.CheckBox chk_ResetColor;
+        private System.Windows.Forms.Button btn_ResetImage;
     }
 }

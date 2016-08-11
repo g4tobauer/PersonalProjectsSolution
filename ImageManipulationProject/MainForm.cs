@@ -22,7 +22,7 @@ namespace ImageManipulationProject
             InitializeComponent();
         }
 
-        private void ProcuraImagem(ref Bitmap bitmapImage)
+        private bool ProcuraImagem()
         {
             Stream stream = null;
             var openFileDialog1 = new OpenFileDialog
@@ -47,24 +47,41 @@ namespace ImageManipulationProject
             {
                 using (stream)
                 {
-                    bitmapImage = (Bitmap)Image.FromStream(stream);
-                    ImprimeImagem(bitmapImage, 0, 0);
+                    imageBuffer = (Bitmap)Image.FromStream(stream);
                 }
+                return true;
             }
+            return false;
         }
 
         private void btn_ProcuraImagem_Click(object sender, EventArgs e)
         {
-            ProcuraImagem(ref firstBitmapImage);
+            if (ProcuraImagem())
+            {
+                firstBitmapImage = imageBuffer;
+                ImprimeImagem(firstBitmapImage, 0, 0);
+            }
         }
 
         private void ImprimeImagem(Bitmap image, int x, int y)
         {
             try
             {
+                var ratioX = (double)this.Width / image.Width;
+                var ratioY = (double)this.Height / image.Height;
+                var ratio = Math.Min(ratioX, ratioY);
+
+                var newWidth = (int)(image.Width * ratio);
+                var newHeight = (int)(image.Height * ratio);
+
+                Image imageObject = new Bitmap(image, newWidth, newHeight);
+                
+                MemoryStream stream = new MemoryStream();
+                imageObject.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+
                 Graphics formGraphics = pnl_Draw.CreateGraphics();
                 formGraphics.Clear(Color.Transparent);
-                formGraphics.DrawImage(image, x, y);
+                formGraphics.DrawImage(imageObject, x, y);
                 formGraphics.Dispose();
             }
             catch (FileNotFoundException)
@@ -76,16 +93,28 @@ namespace ImageManipulationProject
 
         private void btn_AddImage_Click(object sender, EventArgs e)
         {
-            ProcuraImagem(ref secondBitmapImage);
-            imageBuffer = ImageOperation.Sum(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
-            ImprimeImagem(imageBuffer,0, 0);
+            if (firstBitmapImage != null)
+            {
+                if (ProcuraImagem())
+                {
+                    secondBitmapImage = imageBuffer;
+                    imageBuffer = ImageOperation.Sum(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
+                    ImprimeImagem(imageBuffer, 0, 0);
+                }
+            }
         }
 
         private void btn_SubImage_Click(object sender, EventArgs e)
         {
-            ProcuraImagem(ref secondBitmapImage);
-            imageBuffer = ImageOperation.Sub(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
-            ImprimeImagem(imageBuffer,0, 0);
+            if (firstBitmapImage != null)
+            {
+                if (ProcuraImagem())
+                {
+                    secondBitmapImage = imageBuffer;
+                    imageBuffer = ImageOperation.Sub(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
+                    ImprimeImagem(imageBuffer, 0, 0);
+                }
+            }
         }
 
         private void btn_SaveImage_Click(object sender, EventArgs e)
@@ -95,16 +124,33 @@ namespace ImageManipulationProject
 
         private void btn_Mult_Click(object sender, EventArgs e)
         {
-            ProcuraImagem(ref secondBitmapImage);
-            imageBuffer = ImageOperation.Mul(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
-            ImprimeImagem(imageBuffer, 0, 0);
+            if (firstBitmapImage != null)
+            {
+                if (ProcuraImagem())
+                {
+                    secondBitmapImage = imageBuffer;
+                    imageBuffer = ImageOperation.Mul(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
+                    ImprimeImagem(imageBuffer, 0, 0);
+                }
+            }
         }
 
         private void btn_Div_Click(object sender, EventArgs e)
         {
-            ProcuraImagem(ref secondBitmapImage);
-            imageBuffer = ImageOperation.Div(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
-            ImprimeImagem(imageBuffer, 0, 0);
+            if (firstBitmapImage != null)
+            {
+                if (ProcuraImagem())
+                {
+                    secondBitmapImage = imageBuffer;
+                    imageBuffer = ImageOperation.Div(firstBitmapImage, secondBitmapImage, chk_ResetColor.Checked);
+                    ImprimeImagem(imageBuffer, 0, 0);
+                }
+            }
+        }
+
+        private void btn_ResetImage_Click(object sender, EventArgs e)
+        {
+            ImprimeImagem(firstBitmapImage, 0, 0);
         }
     }
 }
