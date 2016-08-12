@@ -92,8 +92,8 @@ namespace ImageManipulationProject
             {
                 var hightwidth = imagemA.Width > imagemB.Width ? imagemA.Width : imagemB.Width;
                 var hightheight = imagemA.Height > imagemB.Height ? imagemA.Height : imagemB.Height;
-                var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
-                var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
+                //var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
+                //var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
 
                 newImageA = new Bitmap(hightwidth, hightheight, imagemA.PixelFormat);
                 imagemA = NormalizeImage(newImageA, imagemA);
@@ -131,8 +131,8 @@ namespace ImageManipulationProject
             {
                 var hightwidth = imagemA.Width > imagemB.Width ? imagemA.Width : imagemB.Width;
                 var hightheight = imagemA.Height > imagemB.Height ? imagemA.Height : imagemB.Height;
-                var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
-                var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
+                //var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
+                //var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
 
                 newImageA = new Bitmap(hightwidth, hightheight, imagemA.PixelFormat);
                 imagemA = NormalizeImage(newImageA, imagemA);
@@ -170,8 +170,8 @@ namespace ImageManipulationProject
             {
                 var hightwidth = imagemA.Width > imagemB.Width ? imagemA.Width : imagemB.Width;
                 var hightheight = imagemA.Height > imagemB.Height ? imagemA.Height : imagemB.Height;
-                var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
-                var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
+                //var lowtwidth = imagemA.Width < imagemB.Width ? imagemA.Width : imagemB.Width;
+                //var lowtheight = imagemA.Height < imagemB.Height ? imagemA.Height : imagemB.Height;
 
                 newImageA = new Bitmap(hightwidth, hightheight, imagemA.PixelFormat);
                 imagemA = NormalizeImage(newImageA, imagemA);

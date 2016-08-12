@@ -67,14 +67,20 @@ namespace ImageManipulationProject
         {
             try
             {
-                var ratioX = (double)this.Width / image.Width;
-                var ratioY = (double)this.Height / image.Height;
-                var ratio = Math.Min(ratioX, ratioY);
-
-                var newWidth = (int)(image.Width * ratio);
-                var newHeight = (int)(image.Height * ratio);
-
-                Image imageObject = new Bitmap(image, newWidth, newHeight);
+                Image imageObject = null;
+                if (image.Width > this.Width && image.Height > this.Height)
+                {
+                    var ratioX = (double)this.Width / image.Width;
+                    var ratioY = (double)this.Height / image.Height;
+                    var ratio = Math.Min(ratioX, ratioY);
+                    var newWidth = (int)(image.Width * ratio);
+                    var newHeight = (int)(image.Height * ratio);
+                    imageObject = new Bitmap(image, newWidth, newHeight);
+                }
+                else
+                {
+                    imageObject = new Bitmap(image);
+                }
                 
                 MemoryStream stream = new MemoryStream();
                 imageObject.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
