@@ -11,8 +11,8 @@ namespace Recursividade
         private static int[,] array;
         static void Main(string[] args)
         {
-            int x = 3;
-            int y = 3;
+            int x = 6000;
+            int y = 6000;
 
             int cont = 0;
 
@@ -25,17 +25,19 @@ namespace Recursividade
                 }
 
             long milliseconds = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-            //for (int i = 0; i < x; i++)
-            //    for (int j = 0; j < y; j++)
-            //    {
-            //        //Console.WriteLine(array[i, j]);
-            //    }
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    //Console.WriteLine(array[i, j]);
+                }
+            Console.WriteLine("OK");
+            recursividade2(x - 1, y - 1);
+            Console.WriteLine("OK");
             //recursividade(x - 1, y - 1, y - 1);
 
 
-            //for (int i = x - 1; i >= 0; i--)
+            //for (int i = x - 1; i >= 0; i--)ss
             //{
-                recursividade2(x-1, y - 1);
             //}
             Console.ReadKey();
         }
@@ -62,28 +64,32 @@ namespace Recursividade
 
         static void recursividade2(int x, int y)
         {
+            //string result = string.Empty;
             if (x == 0)
             {
-                Console.WriteLine(array[x, y].ToString());
+                //result = array[x, y].ToString();
             }
             else
             {
-                Console.WriteLine(array[x, y].ToString());
+                //result = array[x, y].ToString();
                 recursividade2(x-1, y);
             }
             recursividade3(x, y - 1);
+            //Console.WriteLine(result);
         }
         static void recursividade3(int x, int y)
         {
+            //string result = string.Empty;
             if (y == 0)
             {
-                Console.WriteLine(array[x, y].ToString());
+                //result = array[x, y].ToString();
             }
             else
             {
-                Console.WriteLine(array[x, y].ToString());
+                //result = array[x, y].ToString();
                 recursividade3(x, y-1);
             }
+            //Console.WriteLine(result);
         }
     }
 }
